@@ -1515,23 +1515,25 @@ main{background:var(--bg-2)}
 
 
 /* ---- inner-page stat tiles inherit the HOMEPAGE treatment on this site ----
-   The shared inner-page CSS gives .ip-facts the light card look, which is
-   windowanswers.com's stats band. This site's homepage band is a dark pastel
-   slab with hairline dividers, so the inner-page tiles have to match it or an
-   article looks like it came from the other site. */
-.ip-facts{
+   The shared inner-page CSS gives both .key-figs (written-page frontmatter
+   tiles) and .ip-facts (the now-unused in-progress placeholder) the light card
+   look, which is windowanswers.com's stats band. This site's homepage band is
+   a dark pastel slab with hairline dividers, so every stat-tile occurrence has
+   to match it - a written guide's key-figures were the one place still using
+   the other site's light-card look. */
+.key-figs,.ip-facts{
   display:grid; grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));
   gap:1px; padding:0; margin:0 0 2rem;
   background:var(--deep-3);            /* shows through the gaps as dividers */
   border:0; border-radius:var(--r-xl); overflow:hidden;
   box-shadow:0 16px 34px -22px rgba(11,22,28,.5);
 }
-.ip-facts li{
+.key-figs li,.ip-facts li{
   background:var(--deep); padding:1.2rem 1.15rem; gap:.15rem;
   transition:background .18s ease;
 }
-.ip-facts li:hover{background:var(--deep-2)}
-.ip-facts li::before{display:none}     /* the slab has dividers; no left rule */
-.ip-n{color:#fff}
-.ip-l{color:var(--deep-ink)}
-.ip-d{color:var(--deep-ink-2)}
+.key-figs li:hover,.ip-facts li:hover{background:var(--deep-2)}
+.key-figs li::before,.ip-facts li::before{display:none}   /* slab has dividers; no left rule */
+.kf-n,.ip-n{color:#fff}
+.kf-l,.ip-l{color:var(--deep-ink)}
+.kf-d,.ip-d{color:var(--deep-ink-2)}
